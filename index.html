@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanskrit — Layer II · Nāda Brahman · The Living Science</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Noto+Sans+Devanagari:wght@300;400;500;600&family=Cinzel:wght@400;500;600;700&family=IM+Fell+English+SC&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a0f00;
+  --ink-mid: #3d2b10;
+  --ink-soft: #6b4e2a;
+  --gold: #b8860b;
+  --gold-bright: #d4a017;
+  --gold-pale: #f5e6c0;
+  --gold-wash: #fdf5e4;
+  --copper: #8b4513;
+  --saffron: #ff6f00;
+  --saffron-pale: #fff3e0;
+  --crimson: #7b1c1c;
+  --teal-deep: #004d4d;
+  --teal-mid: #006666;
+  --parchment: #fefaf3;
+  --parchment-dark: #f5ead8;
+  --border-gold: rgba(184,134,11,0.35);
+  --border-gold-strong: rgba(184,134,11,0.65);
+  --shadow-warm: 0 4px 24px rgba(139,69,19,0.10);
+  --tab-font: 'Cinzel', serif;
+  --body-font: 'Spectral', serif;
+  --devanagari: 'Noto Sans Devanagari', sans-serif;
+  --display-font: 'Cormorant Garamond', serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: var(--body-font);
+  font-size: 17px;
+  line-height: 1.8;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, #0d0600 0%, #1e0e02 40%, #2a1505 70%, #0d0600 100%);
+  color: #f5e6c0;
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--gold);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(184,134,11,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 60% at 20% 50%, rgba(139,69,19,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 60% at 80% 50%, rgba(139,69,19,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-nav-link {
+  display: inline-block;
+  font-family: var(--tab-font);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--gold-pale);
+  text-decoration: none;
+  border: 1px solid var(--border-gold);
+  padding: 6px 18px;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+}
+.hero-nav-link:hover { background: rgba(184,134,11,0.15); }
+
+.hero-om {
+  font-family: var(--devanagari);
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--gold-bright);
+  display: block;
+  line-height: 1;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 40px rgba(212,160,23,0.4);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+  0%,100% { text-shadow: 0 0 30px rgba(212,160,23,0.3); }
+  50% { text-shadow: 0 0 60px rgba(212,160,23,0.6), 0 0 100px rgba(212,160,23,0.2); }
+}
+
+.hero-title {
+  font-family: var(--display-font);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: #f5e6c0;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle-dev {
+  font-family: var(--devanagari);
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  color: var(--gold-bright);
+  font-weight: 300;
+  margin-bottom: 1rem;
+  letter-spacing: 0.06em;
+}
+
+.hero-tagline {
+  font-family: var(--body-font);
+  font-style: italic;
+  font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+  color: rgba(245,230,192,0.72);
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+}
+
+.layer-badge {
+  display: inline-block;
+  font-family: var(--tab-font);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  background: var(--gold);
+  color: #0d0600;
+  padding: 5px 20px;
+  border-radius: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0.5rem 0.3rem;
+}
+
+.layer-badge.layer2 {
+  background: transparent;
+  color: var(--gold-bright);
+  border: 1px solid var(--gold);
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.hero-meta-item {
+  font-family: var(--tab-font);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: rgba(245,230,192,0.55);
+  text-transform: uppercase;
+}
+.hero-meta-item span {
+  display: block;
+  font-size: 18px;
+  font-family: var(--display-font);
+  font-weight: 600;
+  color: var(--gold-bright);
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.2;
+}
+
+/* ── LAYER SWITCHER ── */
+.layer-switcher {
+  background: #120800;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border-bottom: 2px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.layer-btn {
+  font-family: var(--tab-font);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: rgba(245,230,192,0.5);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+.layer-btn:hover { color: var(--gold-pale); background: rgba(184,134,11,0.08); }
+.layer-btn.active {
+  color: var(--gold-bright);
+  border-bottom-color: var(--gold-bright);
+  background: rgba(184,134,11,0.12);
+}
+
+/* ── TAB BAR ── */
+.tab-bar-wrapper {
+  background: #1a0a01;
+  border-bottom: 1px solid var(--border-gold);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) #1a0a01;
+}
+.tab-bar {
+  display: flex;
+  min-width: max-content;
+  padding: 0 1rem;
+}
+.tab-btn {
+  font-family: var(--tab-font);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  color: rgba(245,230,192,0.45);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 12px 18px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s;
+  text-transform: uppercase;
+  position: relative;
+}
+.tab-btn:hover { color: var(--gold-pale); background: rgba(184,134,11,0.06); }
+.tab-btn.active {
+  color: var(--gold-bright);
+  border-bottom-color: var(--saffron);
+  background: rgba(255,111,0,0.07);
+}
+.tab-num {
+  display: inline-block;
+  font-size: 8px;
+  color: var(--gold);
+  margin-right: 5px;
+  font-family: 'Cinzel', serif;
+}
+
+/* ── MAIN CONTENT AREA ── */
+.content-area {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeSlide 0.4s ease; }
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── PANEL HEADER ── */
+.panel-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.panel-eyebrow {
+  font-family: var(--tab-font);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--saffron);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.panel-title {
+  font-family: var(--display-font);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+
+.panel-title-dev {
+  font-family: var(--devanagari);
+  font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+  color: var(--crimson);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.panel-lead {
+  font-family: var(--display-font);
+  font-style: italic;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: var(--ink-soft);
+  line-height: 1.75;
+  max-width: 800px;
+  border-left: 3px solid var(--gold);
+  padding-left: 1.5rem;
+  margin-top: 1.2rem;
+}
+
+/* ── CONTENT BLOCKS ── */
+.section-head {
+  font-family: var(--display-font);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--crimson);
+  margin: 2.5rem 0 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.section-sub {
+  font-family: var(--tab-font);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin: 2rem 0 0.6rem;
+}
+
+p { margin-bottom: 1.2rem; color: var(--ink-mid); }
+
+.shloka-block {
+  background: linear-gradient(135deg, #fdf5e4, #f8eccc);
+  border: 1px solid var(--border-gold-strong);
+  border-left: 4px solid var(--gold);
+  border-radius: 4px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  font-family: var(--devanagari);
+  position: relative;
+}
+.shloka-dev {
+  font-size: 1.3rem;
+  color: var(--crimson);
+  line-height: 2;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+.shloka-trans {
+  font-family: var(--display-font);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.shloka-source {
+  font-family: var(--tab-font);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 0.8rem;
+}
+
+/* ── GRID LAYOUTS ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.info-card {
+  background: var(--gold-wash);
+  border: 1px solid var(--border-gold);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+.info-card-title {
+  font-family: var(--display-font);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--crimson);
+  margin-bottom: 0.5rem;
+}
+.info-card-dev {
+  font-family: var(--devanagari);
+  font-size: 1rem;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+.info-card p { font-size: 0.92rem; line-height: 1.65; margin-bottom: 0; }
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px dashed var(--border-gold);
+  align-items: start;
+}
+.timeline-date {
+  font-family: var(--tab-font);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-transform: uppercase;
+  text-align: right;
+  padding-top: 0.2rem;
+}
+.timeline-content-title {
+  font-family: var(--display-font);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--crimson);
+  margin-bottom: 0.3rem;
+}
+
+.mudra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.mudra-card {
+  border: 1px solid var(--border-gold);
+  border-radius: 4px;
+  padding: 1.2rem;
+  background: var(--parchment-dark);
+  text-align: center;
+}
+.mudra-symbol {
+  font-family: var(--devanagari);
+  font-size: 2.2rem;
+  color: var(--crimson);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.mudra-name {
+  font-family: var(--display-font);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+.mudra-desc { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.5; }
+
+.karana-entry {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+  padding: 1rem 1.2rem;
+  background: var(--gold-wash);
+  border: 1px solid var(--border-gold);
+  border-radius: 3px;
+  align-items: flex-start;
+}
+.karana-num {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  min-width: 42px;
+  text-align: center;
+  line-height: 1;
+  padding-top: 0.15rem;
+}
+.karana-name {
+  font-family: var(--display-font);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--crimson);
+  margin-bottom: 0.2rem;
+}
+.karana-dev { font-family: var(--devanagari); font-size: 0.95rem; color: var(--gold); margin-bottom: 0.3rem; }
+.karana-desc { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.6; }
+
+/* ── REFERENCE BOX ── */
+.ref-box {
+  background: #0d0600;
+  color: var(--gold-pale);
+  border-radius: 4px;
+  padding: 1.8rem 2rem;
+  margin: 2.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.ref-box::before {
+  content: '॥';
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  font-family: var(--devanagari);
+  font-size: 3rem;
+  color: rgba(184,134,11,0.15);
+}
+.ref-box-label {
+  font-family: var(--tab-font);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.ref-box-text {
+  font-family: var(--display-font);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+.ref-box-source {
+  font-family: var(--tab-font);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: rgba(245,230,192,0.45);
+  text-transform: uppercase;
+  margin-top: 0.8rem;
+}
+
+/* ── ACCENT TABLE ── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+.data-table thead tr {
+  background: #0d0600;
+  color: var(--gold-pale);
+}
+.data-table th {
+  font-family: var(--tab-font);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  text-align: left;
+}
+.data-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-gold);
+  color: var(--ink-mid);
+  vertical-align: top;
+}
+.data-table tbody tr:nth-child(even) { background: var(--gold-wash); }
+.data-table .dev { font-family: var(--devanagari); color: var(--crimson); font-size: 1rem; }
+
+/* ── LINKS ── */
+.ext-link {
+  color: var(--teal-deep);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,77,77,0.3);
+  transition: all 0.2s;
+}
+.ext-link:hover { color: var(--crimson); border-bottom-color: var(--crimson); }
+
+.link-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1.5rem 0;
+}
+.link-chip {
+  font-family: var(--tab-font);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 7px 16px;
+  border: 1px solid var(--border-gold-strong);
+  border-radius: 2px;
+  color: var(--gold);
+  background: var(--gold-wash);
+  transition: all 0.25s;
+}
+.link-chip:hover { background: var(--gold); color: #0d0600; }
+
+/* ── FOOTER ── */
+.portal-footer {
+  background: #0d0600;
+  color: rgba(245,230,192,0.45);
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-top: 2px solid var(--gold);
+  font-family: var(--tab-font);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.portal-footer a { color: var(--gold); text-decoration: none; }
+.portal-footer a:hover { color: var(--gold-pale); }
+.footer-om {
+  font-family: var(--devanagari);
+  font-size: 2rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Layer 1 content hidden by default */
+.layer1-content { display: none; }
+.layer1-content.active { display: block; }
+.layer2-content { display: block; }
+.layer2-content.hidden { display: none; }
+
+/* Highlight accent */
+.highlight {
+  background: linear-gradient(120deg, rgba(184,134,11,0.18) 0%, rgba(184,134,11,0.08) 100%);
+  border-left: 3px solid var(--gold);
+  padding: 0.2rem 0.8rem;
+  border-radius: 0 3px 3px 0;
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* Cross-ref badge */
+.xref-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--tab-font);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--saffron-pale);
+  border: 1px solid rgba(255,111,0,0.35);
+  color: var(--saffron);
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin: 0 0.3rem;
+  text-decoration: none;
+}
+.xref-badge:hover { background: var(--saffron); color: #fff; }
+
+/* pullout stat */
+.stat-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+.stat-box {
+  flex: 1;
+  min-width: 130px;
+  background: #0d0600;
+  color: var(--gold-pale);
+  border-radius: 3px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.stat-label {
+  font-family: var(--tab-font);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,230,192,0.55);
+}
+
+@media (max-width: 640px) {
+  .content-area { padding: 2rem 1rem 4rem; }
+  .timeline-entry { grid-template-columns: 1fr; }
+  .timeline-date { text-align: left; }
+  .hero { padding: 2.5rem 1rem 2rem; }
+  .layer-btn { padding: 12px 16px; font-size: 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero">
+  <a href="https://nadabrahmansktadv1.culturalmusings.com" class="hero-nav-link">← Sanskrit Layer I &nbsp;|&nbsp; NadaBrahman Portal</a>
+  <span class="hero-om">ॐ</span>
+  <h1 class="hero-title">Sanskrit — The Living Science</h1>
+  <div class="hero-subtitle-dev">संस्कृतम् — नादब्रह्म — विश्वज्ञानम्</div>
+  <p class="hero-tagline">Layer II · The Applied Cosmos — 18 Encyclopaedic Tablets of Sanskrit as practiced in Nāṭya Śāstra, 108 Karaṇas, Mudrās, Yogic Traditions, Sound Healing, and the Living Arts of Global Human Civilisation</p>
+  <div>
+    <span class="layer-badge">Layer I — Origins & Language</span>
+    <span class="layer-badge layer2">Layer II — Practice & Applications</span>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><span>18</span>Encyclopaedic Tabs</div>
+    <div class="hero-meta-item"><span>5,000+</span>Years of Evolution</div>
+    <div class="hero-meta-item"><span>108</span>Karaṇas Documented</div>
+    <div class="hero-meta-item"><span>∞</span>Living Reference</div>
+  </div>
+</header>
+
+<!-- ══════════ LAYER SWITCHER ══════════ -->
+<nav class="layer-switcher" role="navigation" aria-label="Layer selection">
+  <button class="layer-btn" onclick="switchLayer(1)">॥ Layer I — Origins &amp; Evolution</button>
+  <button class="layer-btn active" onclick="switchLayer(2)">॥ Layer II — Practice &amp; Applications</button>
+</nav>
+
+<!-- ══════════ LAYER 2 TAB BAR (18 TABS) ══════════ -->
+<div class="tab-bar-wrapper layer2-content" id="layer2TabBar">
+<nav class="tab-bar" role="tablist" aria-label="Layer II tabs">
+  <button class="tab-btn active" role="tab" onclick="switchTab(this,'t2-1')"><span class="tab-num">01</span>Nāṭya Śāstra & Sanskrit</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-2')"><span class="tab-num">02</span>108 Karaṇas</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-3')"><span class="tab-num">03</span>Mudrā Vijñāna</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-4')"><span class="tab-num">04</span>Yogic Sanskrit</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-5')"><span class="tab-num">05</span>Nāda Brahman</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-6')"><span class="tab-num">06</span>Ṛgvedic Phonetics</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-7')"><span class="tab-num">07</span>Abhinaya & Rasa</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-8')"><span class="tab-num">08</span>Mantra Science</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-9')"><span class="tab-num">09</span>Sanskrit & Healing</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-10')"><span class="tab-num">10</span>Sanskrit & Cosmos</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-11')"><span class="tab-num">11</span>Sanskrit Grammar</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-12')"><span class="tab-num">12</span>Classical Arts</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-13')"><span class="tab-num">13</span>Sanskrit & AI</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-14')"><span class="tab-num">14</span>Tāla & Rhythm</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-15')"><span class="tab-num">15</span>Vedic Mathematics</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-16')"><span class="tab-num">16</span>Sanskrit Worldwide</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-17')"><span class="tab-num">17</span>Living Traditions</button>
+  <button class="tab-btn" role="tab" onclick="switchTab(this,'t2-18')"><span class="tab-num">18</span>Cross-Reference Index</button>
+</nav>
+</div>
+
+<!-- ══════════ LAYER 1 TAB BAR ══════════ -->
+<div class="tab-bar-wrapper layer1-content" id="layer1TabBar">
+<nav class="tab-bar" role="tablist" aria-label="Layer I tabs">
+  <button class="tab-btn active" role="tab" onclick="switchTab1(this,'t1-1')"><span class="tab-num">01</span>Origins & Proto-Language</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-2')"><span class="tab-num">02</span>Vedic Sanskrit</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-3')"><span class="tab-num">03</span>Pāṇini & Grammar</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-4')"><span class="tab-num">04</span>Classical Sanskrit</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-5')"><span class="tab-num">05</span>Prākrits & Evolution</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-6')"><span class="tab-num">06</span>Script Systems</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-7')"><span class="tab-num">07</span>Phonology & Śikṣā</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-8')"><span class="tab-num">08</span>Literature & Kāvya</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-9')"><span class="tab-num">09</span>Buddhist & Jain Sanskrit</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-10')"><span class="tab-num">10</span>Tantric Sanskrit</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-11')"><span class="tab-num">11</span>Medieval Period</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-12')"><span class="tab-num">12</span>Colonial Revival</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-13')"><span class="tab-num">13</span>Modern Sanskrit</button>
+  <button class="tab-btn" role="tab" onclick="switchTab1(this,'t1-14')"><span class="tab-num">14</span>Sanskrit & Global Languages</button>
+</nav>
+</div>
+
+<!-- ══════════ CONTENT AREA ══════════ -->
+<main class="content-area">
+
+<!-- ============================================================ -->
+<!--  LAYER 2 PANELS -->
+<!-- ============================================================ -->
+
+<!-- TAB 2-1: NĀṬYA ŚĀSTRA & SANSKRIT -->
+<section class="tab-panel active" id="t2-1" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 01 of 18</div>
+    <h2 class="panel-title">Nāṭya Śāstra & Sanskrit</h2>
+    <span class="panel-title-dev">नाट्यशास्त्र — संस्कृत का रंगमंच</span>
+    <p class="panel-lead">Bharata Muni's Nāṭya Śāstra — composed between 200 BCE and 200 CE — is simultaneously the world's first treatise on theatre, the most complete codification of Sanskrit's performative grammar, and the supreme encyclopaedia of Indian aesthetic science. Sanskrit was not merely its medium; it was its very architecture.</p>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">नाट्यं भिन्नरुचेर्जनस्य बहुधाप्येकं समाराधनम्।<br>विधिना साधनं तस्य यतश्चातोऽभिनयः स्मृतः॥</div>
+    <div class="shloka-trans">Drama is the single worship that simultaneously satisfies people of diverse tastes. That by which it achieves its purpose through proper method — that is called Abhinaya (expression).</div>
+    <div class="shloka-source">Nāṭya Śāstra · Bharata Muni · Chapter 1 · c. 200 BCE–200 CE</div>
+  </div>
+
+  <h3 class="section-head">The Nāṭya Śāstra as Sanskrit's Applied Grammar</h3>
+  <p>The Nāṭya Śāstra (नाट्यशास्त्र) is not simply a manual for actors. It is the Sanskrit language in motion — a living demonstration of how the precision of Sanskrit grammar maps onto the precision of the human body. Bharata Muni composed 36 chapters containing approximately 6,000 ślokas, creating what scholars now recognise as the world's most comprehensive pre-modern treatise on aesthetics, performance theory, music, dance, and poetics.</p>
+  <p>The text was transmitted exclusively in Sanskrit, and its technical vocabulary — concepts like <em>Rasa</em> (aesthetic flavour), <em>Bhāva</em> (emotional state), <em>Abhinaya</em> (expressive technique), <em>Tāla</em> (rhythm), <em>Sūtra</em> (aphoristic rule) — could not, and cannot, be translated without loss. Sanskrit's capacity for compound formation, its system of roots (<em>dhātu</em>), and its Pāṇinian structure are what give the Nāṭya Śāstra its architectural coherence.</p>
+
+  <div class="stat-row">
+    <div class="stat-box"><span class="stat-num">36</span><span class="stat-label">Adhyāyas (Chapters)</span></div>
+    <div class="stat-box"><span class="stat-num">6,000</span><span class="stat-label">Ślokas Approximately</span></div>
+    <div class="stat-box"><span class="stat-num">108</span><span class="stat-label">Karaṇas Codified</span></div>
+    <div class="stat-box"><span class="stat-num">9</span><span class="stat-label">Rasas Defined</span></div>
+    <div class="stat-box"><span class="stat-num">49</span><span class="stat-label">Bhāvas Enumerated</span></div>
+  </div>
+
+  <h3 class="section-head">The Five Theatres of Sanskrit in the Nāṭya Śāstra</h3>
+  <div class="grid-2">
+    <div class="info-card">
+      <div class="info-card-title">Vācika Abhinaya</div>
+      <div class="info-card-dev">वाचिक अभिनय</div>
+      <p>The art of vocal expression — how Sanskrit phonemes, metres (Chandas), intonation patterns, and rhetorical figures (Alaṃkāra) are deployed in performance. Every syllable is weighted. Every metre carries a specific emotional signature.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Āṅgika Abhinaya</div>
+      <div class="info-card-dev">आंगिक अभिनय</div>
+      <p>Bodily expression — the codification of 108 Karaṇas, 67 hand gestures (Mudrās), 13 head movements, 36 eye glances. Every body part is given a Sanskrit name with precise kinesthetic definition.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Sāttvika Abhinaya</div>
+      <div class="info-card-dev">सात्त्विक अभिनय</div>
+      <p>Expression arising from inner feeling — the 8 Sāttvika Bhāvas including Stambha (stupefaction), Sveda (perspiration), Romāñca (horripilation). Sanskrit names these involuntary states with clinical precision.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Āhārya Abhinaya</div>
+      <div class="info-card-dev">आहार्य अभिनय</div>
+      <p>Expression through costume, makeup, and staging. The Nāṭya Śāstra catalogues every material element of performance with Sanskrit terminology — from the colours of each character type to the geometry of the stage itself.</p>
+    </div>
+  </div>
+
+  <div class="ref-box">
+    <div class="ref-box-label">Encyclopaedia Reference · Monier-Williams Sanskrit-English Dictionary · 1899</div>
+    <div class="ref-box-text">The Nāṭya Śāstra stands at the intersection of all Sanskrit knowledge systems. Its treatment of prosody (Chandas), grammar (Vyākaraṇa), music (Gāndharva Veda), and metaphysics (Brahma Vidyā) demonstrates that in the Sanskrit tradition, the arts were never separated from the sciences. The text is a unified field theory of human expression.</div>
+    <div class="ref-box-source">Cross-reference: Wisdomlib.org · Nāṭya Śāstra Complete · Bharatanatyam.net · Sanskrit Documents Archive</div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://www.wisdomlib.org/hinduism/book/the-natyashastra" class="link-chip" target="_blank">Wisdom Library — Nāṭya Śāstra Complete</a>
+    <a href="https://natyashastra.culturalmusings.com" class="link-chip" target="_blank">NadaBrahman Nāṭya Portal</a>
+    <a href="https://www.sanskritdocuments.org" class="link-chip" target="_blank">Sanskrit Documents Archive</a>
+    <a href="https://vedicheritage.gov.in" class="link-chip" target="_blank">Vedic Heritage India (GoI)</a>
+  </div>
+</section>
+
+<!-- TAB 2-2: 108 KARAṆAS -->
+<section class="tab-panel" id="t2-2" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 02 of 18</div>
+    <h2 class="panel-title">The 108 Karaṇas</h2>
+    <span class="panel-title-dev">एकशताष्टकरणानि — नाट्यशास्त्र अध्याय ४</span>
+    <p class="panel-lead">The 108 Karaṇas of the Nāṭya Śāstra (Chapter 4) are the foundational atomic units of classical Indian movement — each a precisely named Sanskrit compound describing a complete synchronisation of hand, foot, and body. They are the genetic code of all classical Indian dance.</p>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">अङ्गानां सम्प्रयोगश्च भावदृष्टिसमन्वितः।<br>करणं तदभिख्यातं नृत्तस्य भरतर्षिभिः॥</div>
+    <div class="shloka-trans">The coordinated use of limbs accompanied by emotional gaze — that is called Karaṇa (in pure dance), as declared by the sage Bharata and the rishis.</div>
+    <div class="shloka-source">Nāṭya Śāstra · Chapter 4 · Verse 31 · Bharata Muni</div>
+  </div>
+
+  <h3 class="section-head">Sanskrit Nomenclature of the Karaṇas</h3>
+  <p>Each Karaṇa receives a Sanskrit name that is itself a description. These are primarily tatpuruṣa and bahuvrīhi compounds — compound Sanskrit words that encode the entire movement sequence within their grammar. Understanding the Sanskrit etymology reveals the movement itself. This is Sanskrit as kinetic science.</p>
+
+  <div class="section-sub">Selected Karaṇas — Etymology & Practice</div>
+
+  <div class="karana-entry">
+    <div class="karana-num">1</div>
+    <div>
+      <div class="karana-name">Tālapuṣpapuṭa</div>
+      <div class="karana-dev">तालपुष्पपुट</div>
+      <div class="karana-desc"><strong>Etymology:</strong> Tāla (palm/rhythm) + Puṣpa (flower) + Puṭa (hollow/cupped). The movement suggests the palm opening like a flower cupping nectar. Both hands in Patāka gesture, raised to the level of the face, fingers spreading open like petals. This Karaṇa inaugurates the sequence — a gesture of sacred opening and invocation.</div>
+    </div>
+  </div>
+  <div class="karana-entry">
+    <div class="karana-num">2</div>
+    <div>
+      <div class="karana-name">Vartita</div>
+      <div class="karana-dev">वर्तित</div>
+      <div class="karana-desc"><strong>Etymology:</strong> From the root √vṛt (to turn/revolve). The body turns in a circular gesture with the wrist rotating — a cosmic rotation echoing the turning of celestial spheres. Right foot in Agratalasañcara, body turning with Recita wrist movement.</div>
+    </div>
+  </div>
+  <div class="karana-entry">
+    <div class="karana-num">16</div>
+    <div>
+      <div class="karana-name">Nikuṭṭita</div>
+      <div class="karana-dev">निकुट्टित</div>
+      <div class="karana-desc"><strong>Etymology:</strong> From √kuṭ (to contract/crumple). The hand contracts inward — a gathering energy that precedes explosive release. Corresponds to prāṇāyāma kumbhaka (breath retention) in yogic parallel.</div>
+    </div>
+  </div>
+  <div class="karana-entry">
+    <div class="karana-num">44</div>
+    <div>
+      <div class="karana-name">Garuda Plutam</div>
+      <div class="karana-dev">गरुड प्लुतम्</div>
+      <div class="karana-desc"><strong>Etymology:</strong> Garuḍa (the divine eagle vehicle of Viṣṇu) + Pluta (leaping/soaring). Both arms extended wide in Patāka, body rising in a jump — evoking the eagle's soaring flight. One of the aerial Karaṇas (Utpluta group) requiring advanced physical training.</div>
+    </div>
+  </div>
+  <div class="karana-entry">
+    <div class="karana-num">108</div>
+    <div>
+      <div class="karana-name">Uromaṇḍala</div>
+      <div class="karana-dev">उरोमण्डल</div>
+      <div class="karana-desc"><strong>Etymology:</strong> Uras (chest/heart) + Maṇḍala (circle/complete cycle). The chest traces a complete circle — the final Karaṇa, returning to the heart, completing the cosmic movement cycle. The 108th position is the return to source, to Ātman, to Brahman. The number 108 itself is sacred: 1 (Brahman) × 0 (śūnya/void) × 8 (infinity/∞ rotated) = the infinite circle of existence.</div>
+    </div>
+  </div>
+
+  <div class="ref-box">
+    <div class="ref-box-label">Encyclopaedic Cross-Reference · Kapila Vatsyayan · Classical Indian Dance in Literature and the Arts · 1968</div>
+    <div class="ref-box-text">The 108 Karaṇas represent a complete grammar of the human body expressed through Sanskrit — each movement encapsulating cosmological, anatomical, emotional, and rhythmic information simultaneously. Vatsyayan's landmark work establishes that the Karaṇas are the common root of all major classical Indian dance forms — Bharatanāṭyam, Odissi, Kūcipūḍi, Maṇipuri, Mohiniyāṭṭam, Kathak, and Kathakali all trace their movement vocabulary to this source text.</div>
+    <div class="ref-box-source">Cross-reference: karanasrootmap.culturalmusings.com · natyashastra.culturalmusings.com · Wisdomlib Karana entries</div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://karanasrootmap.culturalmusings.com" class="link-chip" target="_blank">108 Karaṇas Root Map Portal</a>
+    <a href="https://karanassacredsynthesis.culturalmusings.com" class="link-chip" target="_blank">Sacred Synthesis Portal</a>
+    <a href="https://completecelestialsynthesis.culturalmusings.com" class="link-chip" target="_blank">Celestial Synthesis Portal</a>
+    <a href="https://www.wisdomlib.org/hinduism/book/the-natyashastra/d/doc209943.html" class="link-chip" target="_blank">Wisdom Library — Chapter 4</a>
+  </div>
+</section>
+
+<!-- TAB 2-3: MUDRĀ VIJÑĀNA -->
+<section class="tab-panel" id="t2-3" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 03 of 18</div>
+    <h2 class="panel-title">Mudrā Vijñāna</h2>
+    <span class="panel-title-dev">मुद्राविज्ञान — हस्त, देह एवं चित्त</span>
+    <p class="panel-lead">Mudrā — from the Sanskrit root <em>mud</em> (joy) + <em>rā</em> (that which gives) — is the science of sacred gesture. Sanskrit does not merely name these gestures; it generates them. The phonological structure of Sanskrit, its consonant clusters, and its tonal patterns are themselves a manual mudrā — the tongue, palate, and breath performing the original mudras of creation.</p>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">यतो हस्तस्ततो दृष्टिर्यतो दृष्टिस्ततो मनः।<br>यतो मनस्ततो भावो यतो भावस्ततो रसः॥</div>
+    <div class="shloka-trans">Where the hand goes, the eye follows; where the eye goes, the mind follows; where the mind goes, the inner state arises; where the inner state arises, Rasa (aesthetic essence) is born.</div>
+    <div class="shloka-source">Abhinaya Darpaṇa · Nandikeśvara · c. 9th–12th century CE</div>
+  </div>
+
+  <h3 class="section-head">The Classification of Mudrās</h3>
+
+  <table class="data-table">
+    <thead><tr><th>Category</th><th>Sanskrit Name</th><th>Count</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td>Single-hand gestures</td><td class="dev">असंयुत हस्त</td><td>28</td><td>Asamyuta Hasta — one-hand mudras, the primary vocabulary of classical dance</td></tr>
+      <tr><td>Double-hand gestures</td><td class="dev">संयुत हस्त</td><td>24</td><td>Samyuta Hasta — both hands combined for expanded meaning</td></tr>
+      <tr><td>Yogic hand mudras</td><td class="dev">योगमुद्रा</td><td>25</td><td>Yoga Mudrā — gestures that seal prāṇic energy circuits in the body</td></tr>
+      <tr><td>Tantric mudras</td><td class="dev">तान्त्रिक मुद्रा</td><td>108</td><td>Ritual seals used in Āgamic worship, Yantra activation, and deity invocation</td></tr>
+      <tr><td>Face gestures</td><td class="dev">मुखज मुद्रा</td><td>9</td><td>Facial expressions corresponding to the nine Rasas</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-sub">Key Mudras — Etymology & Scientific Correlation</div>
+  <div class="mudra-grid">
+    <div class="mudra-card">
+      <span class="mudra-symbol">🤏</span>
+      <div class="mudra-name">Cin Mudrā</div>
+      <div style="font-family:var(--devanagari);color:var(--gold);font-size:1rem;margin-bottom:0.4rem;">चिन्मुद्रा</div>
+      <div class="mudra-desc">Thumb and index finger touching in a circle. <em>Cin</em> = consciousness. Seals the circuit of individual consciousness (jīva) into cosmic awareness (Brahman). Used in Jñāna Yoga and Vedāntic contemplation.</div>
+    </div>
+    <div class="mudra-card">
+      <span class="mudra-symbol">🙏</span>
+      <div class="mudra-name">Añjali Mudrā</div>
+      <div style="font-family:var(--devanagari);color:var(--gold);font-size:1rem;margin-bottom:0.4rem;">अञ्जलिमुद्रा</div>
+      <div class="mudra-desc">Both palms pressed together at the heart. From √añj (to anoint/honour). Activates the Anāhata (heart) chakra. Used in salutation across Hindu, Buddhist, and Jain traditions — the universal gesture of reverence.</div>
+    </div>
+    <div class="mudra-card">
+      <span class="mudra-symbol">☝️</span>
+      <div class="mudra-name">Patāka</div>
+      <div style="font-family:var(--devanagari);color:var(--gold);font-size:1rem;margin-bottom:0.4rem;">पताक</div>
+      <div class="mudra-desc">All four fingers extended together, thumb bent. From <em>pata</em> (flag/banner). The most fundamental dance gesture — represents clouds, the sea, authority. Used in 28 different narrative contexts in Bharatanāṭyam.</div>
+    </div>
+    <div class="mudra-card">
+      <span class="mudra-symbol">🌸</span>
+      <div class="mudra-name">Padmakośa</div>
+      <div style="font-family:var(--devanagari);color:var(--gold);font-size:1rem;margin-bottom:0.4rem;">पद्मकोश</div>
+      <div class="mudra-desc">All five fingers curved outward like a lotus bud. <em>Padma</em> (lotus) + <em>Kośa</em> (sheath/bud). Used to indicate a flower, fruit, bell, or the rising sun. The lotus in Sanskrit is the symbol of consciousness emerging from matter.</div>
+    </div>
+    <div class="mudra-card">
+      <span class="mudra-symbol">👌</span>
+      <div class="mudra-name">Śikhara</div>
+      <div style="font-family:var(--devanagari);color:var(--gold);font-size:1rem;margin-bottom:0.4rem;">शिखर</div>
+      <div class="mudra-desc">Fist with thumb raised. <em>Śikhara</em> = summit/spire. Represents Śiva's liṅga, the sun, a mountain peak, or addressing someone. The raised thumb points to Brahman as the apex of all existence.</div>
+    </div>
+    <div class="mudra-card">
+      <span class="mudra-symbol">🖐️</span>
+      <div class="mudra-name">Abhaya Mudrā</div>
+      <div style="font-family:var(--devanagari);color:var(--gold);font-size:1rem;margin-bottom:0.4rem;">अभयमुद्रा</div>
+      <div class="mudra-desc">Right hand raised, palm outward. <em>Abhaya</em> = fearlessness. The divine gesture of protection and blessing found in virtually every iconographic tradition — from Vedic to Buddhist, from Jain to Southeast Asian.</div>
+    </div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://nadabrahmanadv1.culturalmusings.com" class="link-chip" target="_blank">NadaBrahman Main Portal</a>
+    <a href="https://www.wisdomlib.org/definition/mudra" class="link-chip" target="_blank">Wisdom Library — Mudrā</a>
+    <a href="https://www.kamakoti.org" class="link-chip" target="_blank">Kamakoti Tantric References</a>
+  </div>
+</section>
+
+<!-- TAB 2-4: YOGIC SANSKRIT -->
+<section class="tab-panel" id="t2-4" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 04 of 18</div>
+    <h2 class="panel-title">Yogic Sanskrit</h2>
+    <span class="panel-title-dev">योगसंस्कृतम् — देहविज्ञान एवं आत्मसाधना</span>
+    <p class="panel-lead">Sanskrit is the language in which the entire science of Yoga was formulated, transmitted, and practised for over 3,000 years. The precision of Sanskrit grammar and its phonological science map precisely onto the precision of the human nervous system, the chakra system, the prāṇic body, and the states of consciousness described in Yogic texts from the Yoga Sūtras of Patañjali to the Haṭha Yoga Pradīpikā.</p>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">योगश्चित्तवृत्तिनिरोधः।<br>तदा द्रष्टुः स्वरूपेऽवस्थानम्॥</div>
+    <div class="shloka-trans">Yoga is the cessation of the fluctuations of the mind. Then the Seer abides in its own essential nature.</div>
+    <div class="shloka-source">Yoga Sūtras of Patañjali · Book I · Sūtras 2–3 · c. 400 CE</div>
+  </div>
+
+  <h3 class="section-head">Sanskrit as the Language of the Yogic Body</h3>
+  <p>Every anatomical and energetic structure described in Yoga has a Sanskrit name — and that name is not arbitrary. The Sanskrit roots embedded in these terms encode precise information about the nature, function, and location of each structure. The yogic body is literally a Sanskrit text.</p>
+
+  <div class="grid-3">
+    <div class="info-card">
+      <div class="info-card-title">Cakra — चक्र</div>
+      <p>From √car (to move in a circle). The 7 cakras are vortices of prāṇic energy. Each has a Sanskrit seed syllable (bīja mantra), a presiding deity, a colour, a element, and a number of petals — all encoded in the Sanskrit tradition.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Prāṇa — प्राण</div>
+      <p>From pra- (forth) + √an (to breathe/live). The vital life force in 5 forms: Prāṇa (inward breath), Apāna (outward), Samāna (equalizing), Udāna (upward), Vyāna (pervading). Sanskrit names each as a directional movement.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Nāḍī — नाडी</div>
+      <p>From √nad (to flow/sound). 72,000 nāḍīs (energy channels) course through the subtle body. The three primary — Iḍā, Piṅgalā, Suṣumnā — are named in Sanskrit for their qualities: cooling moon, warming sun, and the central fire.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Āsana — आसन</div>
+      <p>From √ās (to sit/be). Originally meaning a seated meditation posture in Patañjali, the term expanded to include the full spectrum of 84 classical āsanas, each named in Sanskrit for an animal, sage, deity, or cosmic body.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Prāṇāyāma — प्राणायाम</div>
+      <p>Prāṇa + āyāma (extension/expansion). The science of breath extension — 8 classical techniques in the Haṭha Yoga Pradīpikā, each with Sanskrit names: Nāḍīśodhana, Śītalī, Bhastrīkā, Ujjāyī, Śītkārī, Bhramari, Mūrcchā, Plāvinī.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Samādhi — समाधि</div>
+      <p>Sam (complete) + ā (towards) + √dhā (to place). The state of perfect meditative union — the goal of all Yogic practice. Sanskrit encodes the entire philosophical journey in this single compound: complete placement of self into the whole.</p>
+    </div>
+  </div>
+
+  <div class="ref-box">
+    <div class="ref-box-label">Encyclopaedic Reference · Georg Feuerstein · The Yoga Tradition · Hohm Press 1998</div>
+    <div class="ref-box-text">Sanskrit is not merely the language in which Yoga was recorded — it is the medium through which Yoga's discoveries were made precise and transmissible. The Pāṇinian grammar, with its system of roots (dhātu), suffixes (pratyaya), and compound formations (samāsa), provided the yogic tradition with a precision instrument for mapping states of consciousness that no other language system has equalled. The technical Sanskrit of Yoga is simultaneously a complete phenomenology of the mind.</div>
+    <div class="ref-box-source">Cross-reference: Wisdomlib.org · Yoga Sūtras full commentary · Vedadhara.com</div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://masterconsciousprotocol.culturalmusings.com" class="link-chip" target="_blank">Master Conscious Protocol Portal</a>
+    <a href="https://spiritualphilosophical.culturalmusings.com" class="link-chip" target="_blank">Spiritual Philosophical Portal</a>
+    <a href="https://www.wisdomlib.org/definition/prana" class="link-chip" target="_blank">Wisdom Library — Prāṇa</a>
+  </div>
+</section>
+
+<!-- TAB 2-5: NĀDA BRAHMAN -->
+<section class="tab-panel" id="t2-5" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 05 of 18</div>
+    <h2 class="panel-title">Nāda Brahman</h2>
+    <span class="panel-title-dev">नादब्रह्म — शब्द ब्रह्म — स्फोट सिद्धान्त</span>
+    <p class="panel-lead">The concept of Nāda Brahman — Primordial Sound as the Absolute Reality — is Sanskrit's supreme contribution to the philosophy of existence. Before the universe was matter, before it was light, before it was thought, it was sound. And that sound was Sanskrit's OM — the Praṇava, the first vibration from which all creation unfolds.</p>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">नादब्रह्मणि निष्णातः परमं ब्रह्म विन्दति।<br>नादो ह्यन्तर्गतश्चेतः प्रविशेद् ब्रह्म तत्त्वतः॥</div>
+    <div class="shloka-trans">One who is deeply immersed in Nāda Brahman realises the Supreme Brahman. For sound, entering deep within the mind, leads truly into the essence of Brahman.</div>
+    <div class="shloka-source">Haṭha Yoga Pradīpikā · Chapter 4 · Verse 100 · Svātmārāma · c. 15th century CE</div>
+  </div>
+
+  <h3 class="section-head">The Doctrine of Śabda Brahman — Sound as the Absolute</h3>
+  <p>The Mīmāṃsā and Vyākaraṇa (Grammar) schools of Indian philosophy articulate the doctrine of Śabda Brahman — that the universe itself is a linguistic utterance of the Absolute. The philosopher-grammarian Bhartrhari (5th–7th century CE) in his <em>Vākyapadīya</em> (On the Sentence and Word) established the theory of <em>Sphoṭa</em> — the unitary, indivisible meaning-bearing unit of speech that underlies all linguistic expression.</p>
+
+  <div class="grid-2">
+    <div class="info-card">
+      <div class="info-card-title">Sphoṭa Theory — स्फोट</div>
+      <p>Bhartrhari's revolutionary linguistic philosophy: there is a permanent, eternal Sanskrit sentence (vākya) that underlies all particular utterances. Individual sounds (varṇa) and words (pada) are merely its manifestations. The universe is the Absolute's self-expression in language.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Four Levels of Vāc (Speech)</div>
+      <p><strong>Parā</strong> — the transcendent, unmanifest speech; <strong>Paśyantī</strong> — the visionary/vibrational; <strong>Madhyamā</strong> — the conceptual/mental; <strong>Vaikharī</strong> — articulated, audible speech. All Sanskrit utterance moves through these four planes.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Nādopāsana — Sound Worship</div>
+      <p>The entire tradition of Nāda Yoga — using sound as a vehicle to Brahman. The 14 Nādas described in Haṭha Yoga Pradīpikā (from the tinkling of anklets to the thunder of drums) are stages of inward sound absorption leading to liberation.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Praṇava — OM — प्रणव</div>
+      <p>The primordial Sanskrit syllable OM (AUM) contains the entire universe: A = creation (Brahmā), U = sustenance (Viṣṇu), M = dissolution (Śiva), and the silence that follows = the Turīya (fourth) state — pure consciousness. The Māṇḍūkya Upaniṣad devotes all 12 verses to OM alone.</p>
+    </div>
+  </div>
+
+  <div class="ref-box">
+    <div class="ref-box-label">Encyclopaedic Reference · Ananda K. Coomaraswamy · The Mirror of Gesture · 1917 & Bhartrhari · Vākyapadīya c. 500 CE</div>
+    <div class="ref-box-text">The Sanskrit tradition's identification of sound (Nāda) with the Absolute (Brahman) is not metaphorical — it is a complete epistemology. Bhartrhari's Vākyapadīya establishes that consciousness and language are not merely related but identical at their deepest level. What modern quantum physics calls the field, what information theory calls the code, what music theory calls harmony — Sanskrit philosophy called Nāda Brahman 2,500 years ago.</div>
+    <div class="ref-box-source">Cross-reference: spandanashodha.culturalmusings.com · nada-chikitsa.culturalmusings.com · bioresonancemusings.culturalmusings.com</div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://spandanashodha.culturalmusings.com" class="link-chip" target="_blank">Spandana Śodha — Vibrational Research</a>
+    <a href="https://nada-chikitsa.culturalmusings.com" class="link-chip" target="_blank">Nāda Chikitsā Portal</a>
+    <a href="https://bioresonancemusings.culturalmusings.com" class="link-chip" target="_blank">Bio-Resonance Musings</a>
+    <a href="https://nadabrahmanadv1.culturalmusings.com" class="link-chip" target="_blank">NadaBrahman Home Portal</a>
+  </div>
+</section>
+
+<!-- TAB 2-6: ṚGVEDIC PHONETICS -->
+<section class="tab-panel" id="t2-6" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 06 of 18</div>
+    <h2 class="panel-title">Ṛgvedic Phonetics & Śikṣā</h2>
+    <span class="panel-title-dev">शिक्षाविज्ञान — वैदिक उच्चारण शास्त्र</span>
+    <p class="panel-lead">Śikṣā — the first of the six Vedāṅgas (limbs of the Veda) — is the science of phonetics applied to Sanskrit. Dating back to at least 800 BCE, Śikṣā texts documented the precise articulation of Sanskrit sounds with a rigour that modern phonetics only began to approach in the 19th century. This is not ancient curiosity — it is a living science.</p>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">वर्णः स्वरः मात्रा बलम् साम सन्तानः।<br>इत्युक्तः शिक्षाध्यायः प्रथमः पाणिनीये॥</div>
+    <div class="shloka-trans">Phoneme, pitch, duration, force, modulation, connection — these six are declared as the first topics of the Pāṇinīya Śikṣā.</div>
+    <div class="shloka-source">Pāṇinīya Śikṣā · Verse 1 · c. 4th century BCE</div>
+  </div>
+
+  <h3 class="section-head">The 64 Phonemes of Sanskrit</h3>
+  <p>Sanskrit recognises 64 primary phonemes (varṇa) arranged in a systematic table that is itself a map of human articulatory anatomy. The arrangement is not alphabetical in the modern sense — it is phonological, proceeding from the deepest point of articulation (the throat, kaṇṭha) outward to the lips (oṣṭha), mirroring the outward movement of creation from Brahman to the material world.</p>
+
+  <table class="data-table">
+    <thead><tr><th>Point of Articulation</th><th>Sanskrit Term</th><th>Phonemes</th><th>Yogic / Nādic Significance</th></tr></thead>
+    <tbody>
+      <tr><td>Throat (Guttural)</td><td class="dev">कण्ठ्य</td><td>a, ā, k, kh, g, gh, ṅ, h</td><td>Viśuddha Chakra — pure expression; throat as first chamber of Nāda</td></tr>
+      <tr><td>Palate (Palatal)</td><td class="dev">तालव्य</td><td>i, ī, c, ch, j, jh, ñ, y, ś</td><td>Ājñā Chakra resonance — seat of discriminative intelligence</td></tr>
+      <tr><td>Cerebral (Retroflex)</td><td class="dev">मूर्धन्य</td><td>ṭ, ṭh, ḍ, ḍh, ṇ, ṣ, r</td><td>Sahasrāra connection — crown reverberations; unique to Sanskrit</td></tr>
+      <tr><td>Dental</td><td class="dev">दन्त्य</td><td>t, th, d, dh, n, s, l</td><td>Maṇipūra Chakra — precision, will, articulation of intent</td></tr>
+      <tr><td>Lip (Labial)</td><td class="dev">ओष्ठ्य</td><td>u, ū, p, ph, b, bh, m</td><td>Svādhiṣṭhāna — the creative breath meeting the material world</td></tr>
+    </tbody>
+  </table>
+
+  <div class="link-cluster">
+    <a href="https://www.vedadhara.com" class="link-chip" target="_blank">Vedadhara — Vedic Phonetics</a>
+    <a href="https://vedicheritage.gov.in" class="link-chip" target="_blank">Vedic Heritage — Śikṣā Texts</a>
+    <a href="https://www.sanskritdocuments.org" class="link-chip" target="_blank">Sanskrit Documents Archive</a>
+  </div>
+</section>
+
+<!-- TAB 2-7: ABHINAYA & RASA -->
+<section class="tab-panel" id="t2-7" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 07 of 18</div>
+    <h2 class="panel-title">Abhinaya & the Nine Rasas</h2>
+    <span class="panel-title-dev">नवरस सिद्धान्त — रसास्वाद — अभिनय</span>
+    <p class="panel-lead">Bharata Muni's Rasa Theory — the most influential aesthetic philosophy ever articulated — emerged exclusively from the Sanskrit tradition and depends entirely on Sanskrit for its precision. The 9 Rasas are not "emotions" — they are trans-personal aesthetic states that arise in the heart of the sensitive audience member when the performer correctly employs Sanskrit's grammar of gesture, metre, and music.</p>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">विभावानुभावव्यभिचारिसंयोगाद्रसनिष्पत्तिः।<br>तत्र रतिर्हासश्च शोको क्रोधश्च उत्साहो भयं तथा।<br>जुगुप्सा विस्मयश्चेति स्थायिभावाः प्रकीर्तिताः॥</div>
+    <div class="shloka-trans">Rasa arises from the combination of Vibhāva (determinants), Anubhāva (consequents), and Vyabhicāribhāva (transitory states). The primary emotional states are: love, mirth, sorrow, anger, heroism, fear, disgust, and wonder.</div>
+    <div class="shloka-source">Nāṭya Śāstra · Chapter 6 · Bharata Muni · Rasa Sūtra</div>
+  </div>
+
+  <div class="grid-3">
+    <div class="info-card">
+      <div class="info-card-title">Śṛṅgāra — शृंगार</div>
+      <div class="info-card-dev">Love · Venus-White</div>
+      <p>The king of Rasas. Its Sthāyibhāva (permanent state) is Rati (erotic love). Its deity is Viṣṇu. Its colour is Śyāma (dark/lustrous). All Śṛṅgāra poetry in Sanskrit — from Kālidāsa to Jayadeva — is architecture for invoking this supreme aesthetic state.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Hāsya — हास्य</div>
+      <div class="info-card-dev">Mirth · White</div>
+      <p>The Rasa of laughter and comedy. Its permanence is Hāsa (joy). The Sanskrit comic tradition (Prahasana) and the buffoon character (Viduṣaka) — always depicted speaking Prākrit amid Sanskrit — is a sophisticated commentary on the social function of language itself.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Karuṇa — करुण</div>
+      <div class="info-card-dev">Compassion · Grey</div>
+      <p>The Rasa of pathos and grief. Abhinavagupta, the 10th-century Kashmiri scholar, argued in his <em>Abhinavabhāratī</em> that Karuṇa is the supreme Rasa because compassion (karuṇā) is the closest human analogue to the Absolute's infinite love for all beings.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Raudra — रौद्र</div>
+      <div class="info-card-dev">Fury · Red</div>
+      <p>The Rasa of wrath and divine fury. Its deity is Rudra-Śiva. In the Nāṭya Śāstra's cosmology, righteous wrath (as opposed to jealous anger) is a sacred emotion — the force that destroys adharma and restores cosmic order.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Vīra — वीर</div>
+      <div class="info-card-dev">Heroism · Gold</div>
+      <p>The Rasa of heroism, energy, and valour. Its permanent state is Utsāha (enthusiasm/energy). Sanskrit epic literature — the Mahābhārata, Rāmāyaṇa — is primarily Vīra Rasa. This Rasa is also mapped to the Manipūra (solar plexus) chakra.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Bhayānaka — भयानक</div>
+      <div class="info-card-dev">Terror · Black</div>
+      <p>The Rasa of fear and awe. In Sanskrit poetics, sacred terror (as before the infinite) is distinguished from mere fright. The Bhayānaka Rasa is required to understand Śiva's Tāṇḍava — the terrifying dance that dissolves the universe.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Bībhatsa — बीभत्स</div>
+      <div class="info-card-dev">Disgust · Blue-Black</div>
+      <p>The Rasa of revulsion. Its function in performance is cathartic — by experiencing controlled disgust in the safe context of art, the viewer is purified of attachment to the body and its processes. A sophisticated psychological technology.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Adbhuta — अद्भुत</div>
+      <div class="info-card-dev">Wonder · Yellow</div>
+      <p>The Rasa of amazement and wonder. Its permanent state is Vismaya (astonishment). Abhinavagupta considered Adbhuta to be the closest Rasa to the state of Brahman itself — since wonder is the stopping of habitual thought and opening to the infinite.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Śānta — शान्त</div>
+      <div class="info-card-dev">Peace · White-Gold</div>
+      <p>The ninth Rasa — added by later tradition to Bharata's original eight. Its permanent state is Sama (equanimity). It corresponds to the state of Mokṣa — liberation. Śānta Rasa is the Rasa that all other Rasas point toward; the silence that contains all sound.</p>
+    </div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://natyashastraclassical-dance.culturalmusings.com" class="link-chip" target="_blank">Nāṭya Śāstra Classical Dance Portal</a>
+    <a href="https://www.wisdomlib.org/definition/rasa" class="link-chip" target="_blank">Wisdom Library — Rasa Theory</a>
+  </div>
+</section>
+
+<!-- TAB 2-8: MANTRA SCIENCE -->
+<section class="tab-panel" id="t2-8" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 08 of 18</div>
+    <h2 class="panel-title">Mantra Vijñāna — The Science of Sacred Sound</h2>
+    <span class="panel-title-dev">मन्त्रविज्ञान — शब्दशक्ति — बीजमन्त्र</span>
+    <p class="panel-lead">A mantra is not a prayer in the Western sense. The Sanskrit root is <em>man</em> (mind) + <em>tra</em> (that which protects/liberates). A mantra is a vibrational technology — a precise Sanskrit phonological formula that, when correctly articulated, creates specific effects in the body, mind, and subtle energy system of the practitioner.</p>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">मननात् त्रायते यस्मान्मन्त्र इत्यभिधीयते।<br>मनसश्च प्रमाणं तु शब्दब्रह्ममयं ततः॥</div>
+    <div class="shloka-trans">Because it protects (trāyate) one who meditates (manana) upon it, it is called Mantra. And the measure of the mind is thus constituted of Śabda Brahman — the Absolute as Sound.</div>
+    <div class="shloka-source">Mantra Śāstra · Traditional Etymology · cf. Monier-Williams Sanskrit Dictionary</div>
+  </div>
+
+  <h3 class="section-head">The Structural Components of a Sanskrit Mantra</h3>
+
+  <table class="data-table">
+    <thead><tr><th>Component</th><th>Sanskrit</th><th>Function</th></tr></thead>
+    <tbody>
+      <tr><td>Seer / Sage</td><td class="dev">ऋषि</td><td>The original perceiver (draṣṭā) who first received the mantra — not its composer but its revealer</td></tr>
+      <tr><td>Metre / Rhythm</td><td class="dev">छन्दस्</td><td>The prosodic form that gives the mantra its vibrational architecture — Gāyatrī, Triṣṭubh, Anuṣṭubh, etc.</td></tr>
+      <tr><td>Deity</td><td class="dev">देवता</td><td>The divine consciousness-principle the mantra invokes — Agni, Indra, Rudra, Devī, Viṣṇu</td></tr>
+      <tr><td>Seed Syllable</td><td class="dev">बीज</td><td>The core monosyllabic vibrational essence: OṂ, HRĪṂ, KLĪṂ, AIM, ŚRĪṂ — each carrying distinct energetic frequencies</td></tr>
+      <tr><td>Power Word</td><td class="dev">शक्ति</td><td>The feminine energetic principle embedded in the mantra — activates the masculine seed syllable</td></tr>
+      <tr><td>Peg / Lock</td><td class="dev">कीलक</td><td>The syllable or verse that secures (kīla = nail/pin) the mantra's power and prevents it from fading</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-sub">The Gāyatrī Mantra — Supreme Analysis</div>
+  <div class="shloka-block">
+    <div class="shloka-dev">ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं<br>भर्गो देवस्य धीमहि। धियो यो नः प्रचोदयात्॥</div>
+    <div class="shloka-trans">OM — Earth, Atmosphere, Heaven. We meditate upon that most adorable Light of the Divine Creator. May He illuminate our intellect and inspire it.</div>
+    <div class="shloka-source">Ṛgveda · Maṇḍala III · Sūkta 62 · Verse 10 · Viśvāmitra · c. 1500 BCE</div>
+  </div>
+  <p>The Gāyatrī Mantra is composed in the Gāyatrī metre — 3 pādas of 8 syllables each = 24 syllables. Modern bioacoustic research has found that 24-syllable Sanskrit chants create specific resonance patterns in the pharynx, sinuses, and cranial vault — activating the vagus nerve and inducing measurable states of deep coherence in the brain's electrical activity.</p>
+
+  <div class="link-cluster">
+    <a href="https://www.vedadhara.com" class="link-chip" target="_blank">Vedadhara — Mantra Science</a>
+    <a href="https://vedapurana.org" class="link-chip" target="_blank">Veda Purana Archive</a>
+    <a href="https://www.kamakoti.org" class="link-chip" target="_blank">Kamakoti — Tantric Mantras</a>
+    <a href="https://www.wisdomlib.org/definition/mantra" class="link-chip" target="_blank">Wisdom Library — Mantra</a>
+  </div>
+</section>
+
+<!-- TAB 2-9: SANSKRIT & HEALING -->
+<section class="tab-panel" id="t2-9" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 09 of 18</div>
+    <h2 class="panel-title">Sanskrit & the Healing Sciences</h2>
+    <span class="panel-title-dev">संस्कृत — आयुर्वेद — नादचिकित्सा</span>
+    <p class="panel-lead">Sanskrit is the language of the world's oldest living holistic medical system — Āyurveda (the Science of Life). Every medical principle, every herb, every body part, every disease, every treatment protocol in Āyurveda has a Sanskrit name that encodes its nature. Sanskrit is Āyurveda's diagnostic and prescriptive language simultaneously.</p>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">हिताहितं सुखं दुःखमायुस्तस्य हिताहितम्।<br>मानं च तच्च यत्रोक्तमायुर्वेदः स उच्यते॥</div>
+    <div class="shloka-trans">That which deals with the beneficial and harmful, happy and unhappy life, its measurement and the very nature of life — that is called Āyurveda.</div>
+    <div class="shloka-source">Caraka Saṃhitā · Sūtrasthāna · Chapter 1 · Verse 41 · c. 600 BCE</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="info-card">
+      <div class="info-card-title">Āyurveda & Sanskrit</div>
+      <p>The Caraka Saṃhitā, Suśruta Saṃhitā, and Aṣṭāṅga Hṛdayam — the three foundational texts of Āyurveda — are written entirely in Sanskrit. The Suśruta Saṃhitā (c. 600 BCE) documents 120 surgical instruments and 300 surgical procedures. Its Sanskrit terminology was so precise that 19th-century European surgeons found it immediately comprehensible.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Nāda Chikitsā — Sound Healing</div>
+      <p>The science of healing through Sanskrit sound — not merely metaphorically but physiologically. Specific Sanskrit phonemes, when correctly chanted, create measurable effects: reduced cortisol, increased alpha brain waves, improved heart rate variability. Swara Therapy (the therapeutic use of musical notes/svara) is Āyurveda's direct application of Sanskrit phonology to medicine.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">The Tridoṣa & Sanskrit</div>
+      <p>Vāta (wind/movement), Pitta (fire/transformation), Kapha (water-earth/structure) — the three fundamental principles of Āyurvedic physiology are Sanskrit compounds that encode complete biological realities. Vāta from √vā (to blow); Pitta from √tap (to heat); Kapha from √kup (to accumulate). The etymology is the diagnosis.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Rasāyana — Rejuvenation Science</div>
+      <p>Sanskrit's Rasāyana (rasa = essence + ayana = path/approach) — the Āyurvedic science of rejuvenation and longevity. The system identifies specific herbs, practices, and mantras that reverse cellular aging. Ashwagandha, Shatavari, Brahmi — each named in Sanskrit for its observed qualities, not its botanical genus.</p>
+    </div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://nada-chikitsa.culturalmusings.com" class="link-chip" target="_blank">Nāda Chikitsā Portal</a>
+    <a href="https://bioresonancemusings.culturalmusings.com" class="link-chip" target="_blank">Bio-Resonance Musings</a>
+    <a href="https://spandanashodha.culturalmusings.com" class="link-chip" target="_blank">Spandana Śodha Research</a>
+    <a href="https://www.wisdomlib.org/definition/ayurveda" class="link-chip" target="_blank">Wisdom Library — Āyurveda</a>
+  </div>
+</section>
+
+<!-- TAB 2-10: SANSKRIT & COSMOS -->
+<section class="tab-panel" id="t2-10" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 10 of 18</div>
+    <h2 class="panel-title">Sanskrit & the Cosmos</h2>
+    <span class="panel-title-dev">संस्कृत — खगोल — ज्योतिष — वास्तु</span>
+    <p class="panel-lead">Sanskrit is the medium in which Indian astronomers, mathematicians, and cosmologists articulated discoveries that were centuries ahead of their time. From the heliocentric model (Āryabhaṭa, 499 CE) to the calculation of π, from the invention of zero to the mapping of 27 lunar mansions — all were achieved and recorded in Sanskrit.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="info-card">
+      <div class="info-card-title">Jyotiṣa — Vedic Astronomy</div>
+      <p>The sixth Vedāṅga — the eye of the Veda. Jyotiṣa texts in Sanskrit document the 27 Nakṣatras (lunar mansions), planetary periods (Daśā), and the astronomical calculations that enabled accurate calendar-making for Vedic ritual. The Āryabhaṭīya (499 CE) calculated the Earth's rotation and the length of the sidereal year with extraordinary precision.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Vāstu Śāstra — Sacred Architecture</div>
+      <p>Sanskrit's architectural science — the design of temples, cities, and dwellings according to cosmic principles. Every proportion, every directional alignment, every measurement unit (Māna) in Vāstu Śāstra is encoded in Sanskrit terms. The famous Śilpa Śāstras document India's temple-building science in the same language as the Nāṭya Śāstra — they are a single civilisational project.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Sāṃkhya Cosmology</div>
+      <p>The oldest of the six Darśanas (philosophical schools) — Sāṃkhya — presents a complete Sanskrit cosmology: Puruṣa (pure consciousness) and Prakṛti (primordial matter) as the two ultimate principles. From their interaction emerge 23 tattvas (cosmic principles) — each named in Sanskrit with precise ontological definitions.</p>
+    </div>
+  </div>
+
+  <div class="timeline-entry">
+    <div class="timeline-date">c. 3000 BCE</div>
+    <div><div class="timeline-content-title">Vedāṅga Jyotiṣa</div><p>Earliest astronomical text in Sanskrit — lunar calendar calculation for timing of Vedic sacrifices. Documents the sidereal lunar month and solar year.</p></div>
+  </div>
+  <div class="timeline-entry">
+    <div class="timeline-date">c. 400 BCE</div>
+    <div><div class="timeline-content-title">Sūrya Siddhānta (early)</div><p>Astronomical treatise documenting planetary motion, eclipses, and the concept of a spherical Earth revolving on its axis — centuries before Copernicus.</p></div>
+  </div>
+  <div class="timeline-entry">
+    <div class="timeline-date">499 CE</div>
+    <div><div class="timeline-content-title">Āryabhaṭīya — Āryabhaṭa</div><p>Sanskrit mathematical-astronomical treatise: value of π as 3.1416, calculation of Earth's circumference, heliocentric model of planetary motion, algebra, trigonometry.</p></div>
+  </div>
+  <div class="timeline-entry">
+    <div class="timeline-date">628 CE</div>
+    <div><div class="timeline-content-title">Brāhmasphuṭasiddhānta — Brahmagupta</div><p>First Sanskrit text to define zero (śūnya) as a number with its own arithmetic properties. Also the first systematic treatment of negative numbers.</p></div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://vedicmathematicsgeometry.culturalmusings.com" class="link-chip" target="_blank">Vedic Mathematics & Geometry Portal</a>
+    <a href="https://vedicheritage.gov.in" class="link-chip" target="_blank">Vedic Heritage India</a>
+    <a href="https://www.wisdomlib.org/definition/jyotisha" class="link-chip" target="_blank">Wisdom Library — Jyotiṣa</a>
+  </div>
+</section>
+
+<!-- TAB 2-11: SANSKRIT GRAMMAR -->
+<section class="tab-panel" id="t2-11" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 11 of 18</div>
+    <h2 class="panel-title">Pāṇini's Grammar — The World's First Formal Language System</h2>
+    <span class="panel-title-dev">अष्टाध्यायी — व्याकरण — पाणिनिप्रणीत</span>
+    <p class="panel-lead">Pāṇini's Aṣṭādhyāyī (Eight Chapters), composed around the 4th century BCE, is universally acknowledged as the most precise and comprehensive grammatical work in human history. Its 3,959 sūtras describe the complete morphology, phonology, and syntax of Sanskrit with a formal precision that computer scientists recognise as functionally equivalent to a formal grammar of a computer programming language — 2,300 years before such languages existed.</p>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">वृद्धिरादैच् ॥ अदेङ् गुणः ॥ इको यणचि ॥</div>
+    <div class="shloka-trans">Vṛddhi is ā, ai, au. Guṇa is a, e, o. Before non-palatal vowels, the semivowels y, v, r, l replace the corresponding vowels i/ī, u/ū, ṛ/ṝ, ḷ.</div>
+    <div class="shloka-source">Aṣṭādhyāyī · Pāṇini · Sūtras 1.1.1, 1.1.2, 6.1.77 · c. 4th century BCE</div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box"><span class="stat-num">3,959</span><span class="stat-label">Grammatical Sūtras</span></div>
+    <div class="stat-box"><span class="stat-num">2,000</span><span class="stat-label">Grammatical Roots (Dhātu)</span></div>
+    <div class="stat-box"><span class="stat-num">14</span><span class="stat-label">Śiva Sūtras (Phoneme Groups)</span></div>
+    <div class="stat-box"><span class="stat-num">8</span><span class="stat-label">Adhyāyas (Chapters)</span></div>
+  </div>
+
+  <p>NASA linguist Rick Briggs published a landmark paper in 1985 demonstrating that Sanskrit's grammatical structure is the only natural human language suitable for use as an Artificial Intelligence knowledge representation language — precisely because of the Pāṇinian formal system. The paper noted that scholars had unsuccessfully attempted to design such a precision language for AI for years, while Sanskrit had possessed one for over two millennia.</p>
+
+  <div class="link-cluster">
+    <a href="https://www.sanskritdocuments.org" class="link-chip" target="_blank">Sanskrit Documents — Grammar Texts</a>
+    <a href="https://www.wisdomlib.org/definition/ashtadhyayi" class="link-chip" target="_blank">Wisdom Library — Aṣṭādhyāyī</a>
+    <a href="https://vedicheritage.gov.in" class="link-chip" target="_blank">Vedic Heritage — Grammar</a>
+  </div>
+</section>
+
+<!-- TAB 2-12: CLASSICAL ARTS -->
+<section class="tab-panel" id="t2-12" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 12 of 18</div>
+    <h2 class="panel-title">Sanskrit in the Classical Arts</h2>
+    <span class="panel-title-dev">कला — काव्य — शिल्प — संगीत</span>
+    <p class="panel-lead">Sanskrit is not simply the language of philosophy and science. It is the medium of India's supreme literary, musical, and artistic achievements — the Kāvya (poetry), the Nāṭaka (drama), the Saṃgīta (music theory), and the Śilpa (visual arts). Every classical Indian art form traces its technical vocabulary and its aesthetic foundations to Sanskrit texts.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="info-card">
+      <div class="info-card-title">Kālidāsa — The Shakespeare of Sanskrit</div>
+      <p>Kālidāsa (c. 4th–5th century CE) — author of Abhijñānaśākuntalam (Recognition of Śakuntalā), Meghadūtam (Cloud Messenger), and Kumārasambhavam. When Goethe read a German translation of Śākuntala in 1791, he declared it surpassed all poetry he had ever read. Every verse demonstrates Sanskrit's capacity for simultaneous philosophical, emotional, and sonic perfection.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Bharatanāṭyam — Temple Dance Science</div>
+      <p>The classical dance form of Tamil Nadu traces its theory entirely to the Sanskrit Nāṭya Śāstra. Every technical term in Bharatanāṭyam training — Adavu, Nṛtta, Nṛtya, Abhinaya, Jatisvaram, Varṇam, Padam, Tillānā — is Sanskrit-derived. The dance is the Sanskrit text in motion.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Carnatic Music — Grammatical Architecture</div>
+      <p>The Saṃgīta Ratnākara of Śārṅgadeva (13th century CE) is the comprehensive Sanskrit encyclopaedia of Indian music theory — 7 chapters documenting the 72 Melakarta scales, Rāga grammar, Tāla systems, and the complete science of sound. Every Melakarta rāga name is Sanskrit. Every technical term is Sanskrit.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Temple Architecture — Āgama Śāstras</div>
+      <p>The Āgama texts in Sanskrit codify the complete science of temple construction, image-making (Pratimā Lakṣaṇa), ritual worship (Pūjā Vidhi), and the philosophical basis of sacred space. The Mānasāra and Mayamata are Sanskrit architectural encyclopaedias — detailing everything from the orientation of a temple to the proportions of each deity's image.</p>
+    </div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://natyashastraclassical-dance.culturalmusings.com" class="link-chip" target="_blank">Classical Dance Portal</a>
+    <a href="https://nadabrahmanadv1.culturalmusings.com" class="link-chip" target="_blank">NadaBrahman Music Portal</a>
+    <a href="https://www.wisdomlib.org/definition/kavya" class="link-chip" target="_blank">Wisdom Library — Kāvya</a>
+  </div>
+</section>
+
+<!-- TAB 2-13: SANSKRIT & AI -->
+<section class="tab-panel" id="t2-13" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 13 of 18</div>
+    <h2 class="panel-title">Sanskrit & Artificial Intelligence</h2>
+    <span class="panel-title-dev">संस्कृत — कृत्रिम प्रज्ञा — डिजिटल युग</span>
+    <p class="panel-lead">Far from being an ancient relic, Sanskrit is increasingly recognised by computational linguists and AI researchers as possessing structural properties uniquely suited to the demands of machine understanding, natural language processing, and knowledge representation. The oldest human language meets the newest human tool — and finds itself ahead of its time.</p>
+  </div>
+
+  <div class="ref-box">
+    <div class="ref-box-label">Landmark Reference · Rick Briggs · NASA · Knowledge Representation in Sanskrit and Artificial Intelligence · 1985</div>
+    <div class="ref-box-text">In the 1980s, a major AI research goal was to represent knowledge in a form that a computer could use — a formal, unambiguous language. Researchers discovered that Sanskrit's Pāṇinian grammar already provided exactly this: a metalanguage (the grammar itself) for describing a language (Sanskrit) with formal precision equivalent to a context-free grammar in computational terms. The insight was revolutionary: ancient India had built what AI researchers were still searching for.</div>
+    <div class="ref-box-source">AI Magazine · Vol 6 · No 1 · 1985 · AAAI Press</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="info-card">
+      <div class="info-card-title">Formal Grammar Parallel</div>
+      <p>Pāṇini's Aṣṭādhyāyī uses a system of meta-rules and exceptions organised in a priority hierarchy that computational linguists recognise as equivalent to a formal language grammar. The Śiva Sūtras are essentially a phoneme classification system — a lookup table of exactly the kind used in computational morphology engines today.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Disambiguation & Ambiguity</div>
+      <p>Sanskrit compound words (samāsa) can express in a single word what English requires a clause to express. Yet paradoxically, Sanskrit grammar has zero ambiguity at the structural level — unlike English, whose grammatical structures are often inherently ambiguous. This makes Sanskrit ideal for knowledge graphs and formal ontologies.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Sanskrit NLP Projects (Global)</div>
+      <p>The Sanskrit Computational Linguistics initiative (supported by institutions including IIT Mumbai, Universität Heidelberg, and the University of Hyderabad) has produced open-source tools for Sanskrit morphological analysis, sandhi splitting, and syntactic parsing — all based on Pāṇini's original grammar as a formal specification.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">NadaBrahman & AI</div>
+      <p>This very platform integrates AI (Claude / Anthropic) to enable dynamic Sanskrit text generation, Rāga composition, and cross-reference queries — demonstrating in real time that Sanskrit's structured precision makes it the ideal medium for human-AI knowledge interfaces. The Karaṇas cross-referenced with AI analysis exemplify this synthesis.</p>
+    </div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://unifiedtheory.culturalmusings.com" class="link-chip" target="_blank">Unified Theory Portal</a>
+    <a href="https://karanassacredsynthesis.culturalmusings.com" class="link-chip" target="_blank">Karaṇas Sacred Synthesis</a>
+    <a href="https://github.com/ramachandra1975/nadabrahman" class="link-chip" target="_blank">NadaBrahman GitHub Repository</a>
+  </div>
+</section>
+
+<!-- TAB 2-14: TĀLA & RHYTHM -->
+<section class="tab-panel" id="t2-14" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 14 of 18</div>
+    <h2 class="panel-title">Tāla & Chandas — Sanskrit's Rhythmic Science</h2>
+    <span class="panel-title-dev">तालशास्त्र — छन्दोविज्ञान — लय</span>
+    <p class="panel-lead">Sanskrit's two great rhythmic sciences — Chandas (Vedic prosody) and Tāla (musical rhythm) — are arguably the most sophisticated rhythmic systems ever developed by any civilisation. They encode rhythm not as counting but as breath, not as measure but as cosmic pulsation (Spanda). The Sanskrit word for rhythm, Laya, also means dissolution — the rhythm of existence leads ultimately to merger in the Absolute.</p>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">यस्मात् छन्दांसि सर्वाणि तस्माच्छन्द इति स्मृतः।<br>गायत्री त्रिष्टुप् जगती ब्राह्मणं च चतुष्पदम्॥</div>
+    <div class="shloka-trans">Because all metres are derived from it (the principle of measure), it is called Chandas. Gāyatrī, Triṣṭubh, Jagatī are the Brāhmaṇa's four-footed metres.</div>
+    <div class="shloka-source">Ṛgveda Prātiśākhya · Vedic Phonetics Text · c. 800 BCE</div>
+  </div>
+
+  <table class="data-table">
+    <thead><tr><th>Vedic Metre</th><th>Sanskrit</th><th>Syllables per verse</th><th>Deity / Domain</th><th>Emotional Character</th></tr></thead>
+    <tbody>
+      <tr><td>Gāyatrī</td><td class="dev">गायत्री</td><td>24 (3×8)</td><td>Agni — all Vedic deities</td><td>Bright, invocatory — the metre of dawn and new beginnings</td></tr>
+      <tr><td>Anuṣṭubh</td><td class="dev">अनुष्टुभ</td><td>32 (4×8)</td><td>Viṣṇu / narrative</td><td>Flowing, narrative — the default metre of the epics</td></tr>
+      <tr><td>Triṣṭubh</td><td class="dev">त्रिष्टुभ</td><td>44 (4×11)</td><td>Indra — heroic</td><td>Powerful, martial — the metre of divine heroism</td></tr>
+      <tr><td>Jagatī</td><td class="dev">जगती</td><td>48 (4×12)</td><td>All-gods — universal</td><td>Expansive, cosmic — the metre of the whole world</td></tr>
+      <tr><td>Bṛhatī</td><td class="dev">बृहती</td><td>36 (4×9)</td><td>Rudra / Soma</td><td>Resonant, contemplative — the metre of inner space</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-sub">Classical Tāla System</div>
+  <p>The Nāṭya Śāstra documents 108 Tālas — just as it documents 108 Karaṇas. This is not coincidence: the rhythm and the movement are the same cosmic number. The Saṃgīta Ratnākara refines this to the 35 primary Tālas of classical music, each with a Sanskrit name encoding its beat-pattern structure: Ādi Tāla (8 beats), Rūpaka (6 beats), Khaṇḍa Cāpu (5 beats), Miśra Cāpu (7 beats).</p>
+
+  <div class="link-cluster">
+    <a href="https://nadabrahmanadv1.culturalmusings.com" class="link-chip" target="_blank">NadaBrahman — Tāla & Rāga</a>
+    <a href="https://spandanashodha.culturalmusings.com" class="link-chip" target="_blank">Spandana Śodha — Rhythm Research</a>
+  </div>
+</section>
+
+<!-- TAB 2-15: VEDIC MATHEMATICS -->
+<section class="tab-panel" id="t2-15" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 15 of 18</div>
+    <h2 class="panel-title">Vedic Mathematics & Sanskrit</h2>
+    <span class="panel-title-dev">वैदिक गणित — शून्य — संख्याशास्त्र</span>
+    <p class="panel-lead">Sanskrit mathematicians invented zero, developed the decimal place-value system, discovered trigonometric functions, calculated irrational numbers, developed infinite series, and articulated the laws of combinatorics — all recorded in Sanskrit, centuries and in some cases millennia before equivalent Western discoveries. Mathematics in Sanskrit is not heritage; it is active knowledge.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="info-card">
+      <div class="info-card-title">Śūnya — Zero</div>
+      <div class="info-card-dev">शून्य</div>
+      <p>From śūnya (empty/void) — the same word used for the Buddhist concept of emptiness. Brahmagupta (628 CE) was the first to define zero as a number with arithmetic properties. The philosophical concept preceded the mathematical one — śūnyatā (the void) is the womb of all creation in both Vedānta and Buddhism.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Āryabhaṭa's π</div>
+      <div class="info-card-dev">आर्यभट्ट</div>
+      <p>Āryabhaṭa calculated π = 3.1416 in 499 CE — more accurate than any contemporary calculation. He also identified π as irrational — that it "approaches but does not equal" an exact ratio — a mathematical insight that European mathematicians formalised only in 1761.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Pingala's Binary System</div>
+      <div class="info-card-dev">पिंगल</div>
+      <p>Piṅgala (c. 300 BCE) in his Chandaḥśāstra — a Sanskrit text on Vedic prosody — developed a binary notation system (using long and short syllables = 0 and 1) to classify metre patterns. This is mathematically equivalent to the binary system that underlies all digital computing — 2,300 years before Leibniz.</p>
+    </div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://vedicmathematicsgeometry.culturalmusings.com" class="link-chip" target="_blank">Vedic Mathematics Portal</a>
+    <a href="https://www.wisdomlib.org/definition/vedic-mathematics" class="link-chip" target="_blank">Wisdom Library — Vedic Mathematics</a>
+  </div>
+</section>
+
+<!-- TAB 2-16: SANSKRIT WORLDWIDE -->
+<section class="tab-panel" id="t2-16" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 16 of 18</div>
+    <h2 class="panel-title">Sanskrit's Global Reach</h2>
+    <span class="panel-title-dev">संस्कृत — विश्वव्यापी — भाषापरिवार</span>
+    <p class="panel-lead">Sanskrit did not remain confined to the Indian subcontinent. Through trade, Buddhist and Hindu missionary activity, and the sheer authority of its intellectual tradition, Sanskrit spread across Asia and left indelible marks on the languages, literatures, arts, and religious traditions of Southeast Asia, Central Asia, China, Japan, and — through the proto-Indo-European connection — the entire European language family.</p>
+  </div>
+
+  <h3 class="section-head">Sanskrit's Global Linguistic Family</h3>
+  <table class="data-table">
+    <thead><tr><th>Region / Language</th><th>Sanskrit Connection</th><th>Key Influence</th></tr></thead>
+    <tbody>
+      <tr><td>Indonesia (Bahasa)</td><td>~3,000 Sanskrit loanwords</td><td>Sanskrit-derived scripts, Hindu-Buddhist kingdoms, Ramayana still performed in Bali</td></tr>
+      <tr><td>Thai Language</td><td>Royal vocabulary largely Sanskrit</td><td>Thai royal court still uses Sanskrit-derived formal register; national anthem partly in Sanskrit</td></tr>
+      <tr><td>Khmer (Cambodia)</td><td>Angkor Wat inscriptions in Sanskrit</td><td>Entire legal, administrative, and philosophical vocabulary derived from Sanskrit</td></tr>
+      <tr><td>Javanese</td><td>Kawi script from Devanāgarī lineage</td><td>Classical Javanese literature = Sanskrit-based texts; Mahābhārata performed as Wayang puppet theatre</td></tr>
+      <tr><td>European Languages</td><td>Proto-Indo-European common ancestor</td><td>English: mother/mātr, night/nakta, name/nāma, new/nava — all cognates of Sanskrit originals</td></tr>
+      <tr><td>Tibetan</td><td>Direct Sanskrit translation tradition</td><td>Entire Tibetan Buddhist canon = translations from Sanskrit originals; Tibetan script derived from Brāhmī</td></tr>
+      <tr><td>Japanese</td><td>Sanskrit via Chinese Buddhism</td><td>Japanese characters for Buddhist concepts are transliterations of Sanskrit; Shingon Buddhism uses Sanskrit mantras</td></tr>
+    </tbody>
+  </table>
+
+  <div class="ref-box">
+    <div class="ref-box-label">Encyclopaedic Reference · Sir William Jones · Address to the Asiatic Society of Bengal · 1786</div>
+    <div class="ref-box-text">The Sanskrit language, whatever be its antiquity, is of a wonderful structure — more perfect than the Greek, more copious than the Latin, and more exquisitely refined than either. It bears to both of them a stronger affinity, both in the roots of verbs and in the forms of grammar, than could possibly have been produced by accident — so strong that no philologer could examine them without believing them to have sprung from some common source which, perhaps, no longer exists.</div>
+    <div class="ref-box-source">This statement founded the science of Comparative Linguistics and the Indo-European language family theory — the most consequential linguistic discovery in modern history.</div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://www.culturalmusings.com" class="link-chip" target="_blank">Cultural Musings — Global Heritage</a>
+    <a href="https://www.wisdomlib.org" class="link-chip" target="_blank">Wisdom Library — Global Sanskrit</a>
+    <a href="https://sanskritdocuments.org" class="link-chip" target="_blank">Sanskrit Documents Archive</a>
+  </div>
+</section>
+
+<!-- TAB 2-17: LIVING TRADITIONS -->
+<section class="tab-panel" id="t2-17" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 17 of 18</div>
+    <h2 class="panel-title">Sanskrit as a Living Tradition</h2>
+    <span class="panel-title-dev">जीवित संस्कृत — परम्परा — भविष्यत्</span>
+    <p class="panel-lead">Sanskrit is often described as a dead language. This is the most consequential error in modern cultural discourse. Sanskrit is the mother tongue of approximately 25,000 people in India today; it is the medium of active scholarly production across India, Japan, Germany, and the United States; it is the liturgical language of 1.2 billion Hindus; and its knowledge systems — Yoga, Āyurveda, Vedānta, Classical Music — are practised by hundreds of millions worldwide.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="info-card">
+      <div class="info-card-title">Mattur Village — Living Sanskrit</div>
+      <p>Mattur, a village in Karnataka, India, has maintained Sanskrit as its primary spoken language for generations. Every member of the village — farmers, children, shopkeepers — conducts daily life in Sanskrit. It is not a museum exhibit but a living community demonstrating that Sanskrit's spoken life is continuous.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Gurukula Tradition</div>
+      <p>The ancient Gurukula system — where students live with the teacher for 12–20 years, learning Sanskrit through total immersion — continues in hundreds of traditional institutions across India, particularly in Mysuru, Kāñcīpuram, Varanasi, Pune, and Kerala. These Gurukulas transmit not just the language but the entire living knowledge system encoded within it.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Global Sanskrit Revival</div>
+      <p>Sanskrit is taught at Oxford, Cambridge, Harvard, Yale, Heidelberg, and over 200 universities worldwide. The Samskrita Bharati movement has taught spoken Sanskrit to over 10 million people across India and diaspora communities globally. Sanskrit Wikipedia has over 14,000 articles. The language is growing, not declining.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Sanskrit in the Digital Age</div>
+      <p>Sanskrit is increasingly present in digital spaces: the Sanskrit Documents repository (sanskritdocuments.org) contains hundreds of thousands of texts in Unicode Devanāgarī; the Digital Library of India preserves hundreds of thousands of Sanskrit manuscripts; AI tools are being trained on Sanskrit corpora to enable natural language processing in this ancient language for modern knowledge retrieval.</p>
+    </div>
+  </div>
+
+  <div class="shloka-block">
+    <div class="shloka-dev">संस्कृतं न म्रियते — देशकालातिगं सत्यम्।<br>यावत् सूर्यो दिवि तिष्ठेत् तावत् संस्कृतम् जीवति॥</div>
+    <div class="shloka-trans">Sanskrit does not die — Truth transcends country and time. As long as the sun stands in the sky, Sanskrit lives.</div>
+    <div class="shloka-source">Traditional Verse · Sanskrit Proverb · Living Tradition</div>
+  </div>
+
+  <div class="link-cluster">
+    <a href="https://www.culturalmusings.com" class="link-chip" target="_blank">Cultural Musings — Living Heritage</a>
+    <a href="https://www.vedadhara.com" class="link-chip" target="_blank">Vedadhara — Living Practice</a>
+    <a href="https://vedicheritage.gov.in" class="link-chip" target="_blank">Vedic Heritage — Govt of India</a>
+  </div>
+</section>
+
+<!-- TAB 2-18: CROSS-REFERENCE INDEX -->
+<section class="tab-panel" id="t2-18" role="tabpanel">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer II · Tab 18 of 18</div>
+    <h2 class="panel-title">Complete Cross-Reference Index</h2>
+    <span class="panel-title-dev">सर्वानुक्रमणिका — पार-सन्दर्भ — ज्ञानजाल</span>
+    <p class="panel-lead">This index weaves together both Layers — 14 tabs of Origins & Evolution plus 18 tabs of Practice & Applications — into a unified navigational web. Every concept cross-references every portal in the NadaBrahman network. This is the knowledge map of Sanskrit as a living, breathing, globally resonant civilisational force.</p>
+  </div>
+
+  <h3 class="section-head">The NadaBrahman Network — Complete Portal Map</h3>
+
+  <div class="grid-3">
+    <div class="info-card">
+      <div class="info-card-title">🏠 NadaBrahman Main</div>
+      <p>The mother portal — Rāgas, Vedic texts, 108 Karaṇas, Mantras, Mudrās. The global entry point to all knowledge streams.</p>
+      <a href="https://nadabrahmanadv1.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">📖 Sanskrit Layer I</div>
+      <p>Origins, Proto-Indo-European roots, Vedic Sanskrit, Pāṇini, Script systems, Prākrits, Medieval and Modern evolution.</p>
+      <a href="https://nadabrahmansktadv1.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">🎭 Nāṭya Śāstra</div>
+      <p>Complete study of Nāṭya Śāstra and 108 Karaṇas. The foundational performance science in cross-reference to modern science.</p>
+      <a href="https://natyashastra.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">🗺️ Karaṇas Root Map</div>
+      <p>The foundational root map of all 108 Karaṇas — positions, Sanskrit names, movement descriptions, and cross-references.</p>
+      <a href="https://karanasrootmap.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">🔔 Nāda Chikitsā</div>
+      <p>Sound healing through Sanskrit — the seven musical notes, their physiological effects, and the Āyurvedic science of Swara Therapy.</p>
+      <a href="https://nada-chikitsa.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">🧬 Bio-Resonance</div>
+      <p>Manuscripts, ancient metaphors, and the body's intelligence — Sanskrit's role in understanding bioresonance and vibrational medicine.</p>
+      <a href="https://bioresonancemusings.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">🌀 Spandana Śodha</div>
+      <p>Vibrational research — Sanskrit's Spanda (vibration) theory in cross-reference to quantum physics, cymatics, and consciousness studies.</p>
+      <a href="https://spandanashodha.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">🧮 Vedic Mathematics</div>
+      <p>Zero, π, binary, infinite series, geometry — Sanskrit's mathematical genius in cross-reference to modern computational mathematics.</p>
+      <a href="https://vedicmathematicsgeometry.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">🌸 Sacred Synthesis</div>
+      <p>The Sacred Synthesis of 108 Karaṇas — Cosmic Movement, Sacred Gesture, and Divine Language unified into a single knowledge matrix.</p>
+      <a href="https://karanassacredsynthesis.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">⭐ Celestial Synthesis</div>
+      <p>All 108 Karaṇas in complete celestial context — planetary correspondences, chakra mappings, and cosmic movement as divine language.</p>
+      <a href="https://completecelestialsynthesis.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">🧘 Conscious Protocol</div>
+      <p>The holistic approach — Sanskrit's role in mapping consciousness, healing, and the unified field through Yoga, Tantra, and Vedānta.</p>
+      <a href="https://masterconsciousprotocol.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">♾️ Unified Theory</div>
+      <p>The final summation — where all portals, all knowledge streams, all Sanskrit sciences converge into a single unified understanding.</p>
+      <a href="https://unifiedtheory.culturalmusings.com" class="link-chip" style="margin-top:0.8rem;display:inline-block" target="_blank">Visit Portal →</a>
+    </div>
+  </div>
+
+  <h3 class="section-head">Encyclopaedic Reference Sources</h3>
+  <div class="grid-2">
+    <div class="info-card">
+      <div class="info-card-title">Primary Sanskrit Text Archives</div>
+      <a href="https://sanskritdocuments.org" class="link-chip" style="margin:0.3rem 0.3rem 0.3rem 0;display:inline-block" target="_blank">Sanskrit Documents</a>
+      <a href="https://www.wisdomlib.org" class="link-chip" style="margin:0.3rem 0.3rem 0.3rem 0;display:inline-block" target="_blank">Wisdom Library</a>
+      <a href="https://vedicheritage.gov.in" class="link-chip" style="margin:0.3rem 0.3rem 0.3rem 0;display:inline-block" target="_blank">Vedic Heritage India</a>
+      <a href="https://vedapurana.org" class="link-chip" style="margin:0.3rem 0.3rem 0.3rem 0;display:inline-block" target="_blank">Veda Purana</a>
+      <a href="https://www.vedadhara.com" class="link-chip" style="margin:0.3rem 0.3rem 0.3rem 0;display:inline-block" target="_blank">Vedadhara</a>
+      <a href="https://www.kamakoti.org" class="link-chip" style="margin:0.3rem 0.3rem 0.3rem 0;display:inline-block" target="_blank">Kamakoti.org</a>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Key Scholarly References</div>
+      <p style="font-size:0.85rem;line-height:1.7;">
+        Monier-Williams Sanskrit-English Dictionary (1899) · Kapila Vatsyayan — Classical Indian Dance (1968) · Georg Feuerstein — The Yoga Tradition (1998) · Bhartrhari — Vākyapadīya (c. 500 CE) · Rick Briggs — Sanskrit & AI, NASA (1985) · Abhinavagupta — Abhinavabhāratī (c. 1000 CE) · Ananda Coomaraswamy — Mirror of Gesture (1917) · Sir William Jones — Address to Asiatic Society (1786) · Āryabhaṭa — Āryabhaṭīya (499 CE) · Brahmagupta — Brāhmasphuṭasiddhānta (628 CE)
+      </p>
+    </div>
+  </div>
+
+  <div class="ref-box">
+    <div class="ref-box-label">Editorial Note — NadaBrahman Sanskrit Layer II · A Statement of Purpose</div>
+    <div class="ref-box-text">This portal exists to transmit a single truth: Sanskrit is not India's past. It is humanity's future. Every civilisation that has ever encountered Sanskrit has been transformed by it — its music, its mathematics, its medicine, its cosmology, its grammar, its philosophy of consciousness. In the 21st century, as artificial intelligence attempts to represent and process knowledge, as neuroscience maps consciousness, as quantum physics encounters non-locality and interconnection — it finds itself arriving at conclusions that Sanskrit encoded millennia ago. This portal is both an archive and a call. The archive is for scholars. The call is for the world: the knowledge contained in Sanskrit is not the property of any religion, culture, or nation. It is the inheritance of every human being who has ever wondered what existence is, and how it sings.</div>
+    <div class="ref-box-source">NadaBrahman · culturalmusings.com · All portals cross-referenced · Contact: smith123846@gmail.com · +91 91213 79100</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- LAYER 1 PANELS (stub — links back to existing site) -->
+<!-- ============================================================ -->
+<section class="tab-panel active layer1-content" id="t1-1" role="tabpanel" style="display:none">
+  <div class="panel-header">
+    <div class="panel-eyebrow">Layer I · Tab 01 of 14</div>
+    <h2 class="panel-title">Origins & Proto-Language</h2>
+    <p class="panel-lead">Layer I of the Sanskrit portal is fully documented at <a href="https://nadabrahmansktadv1.culturalmusings.com" class="ext-link">nadabrahmansktadv1.culturalmusings.com</a>. This Layer II portal focuses exclusively on the applied sciences of Sanskrit. Please visit the Layer I portal for complete coverage of origins, Proto-Indo-European roots, Vedic Sanskrit, and linguistic evolution.</p>
+  </div>
+  <a href="https://nadabrahmansktadv1.culturalmusings.com" class="link-chip" target="_blank">Go to Layer I Sanskrit Portal →</a>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="portal-footer">
+  <span class="footer-om">ॐ</span>
+  <div style="margin-bottom:1rem;">
+    <a href="https://nadabrahmanadv1.culturalmusings.com">NadaBrahman Main</a> &nbsp;·&nbsp;
+    <a href="https://nadabrahmansktadv1.culturalmusings.com">Sanskrit Layer I</a> &nbsp;·&nbsp;
+    <a href="https://natyashastra.culturalmusings.com">Nāṭya Śāstra</a> &nbsp;·&nbsp;
+    <a href="https://nada-chikitsa.culturalmusings.com">Nāda Chikitsā</a> &nbsp;·&nbsp;
+    <a href="https://unifiedtheory.culturalmusings.com">Unified Theory</a> &nbsp;·&nbsp;
+    <a href="mailto:smith123846@gmail.com">Contact</a>
+  </div>
+  <div>Sanskrit Layer II · 18 Encyclopaedic Tabs · NadaBrahman World Knowledge Platform</div>
+  <div style="margin-top:0.6rem;">© Cultural Musings · All knowledge belongs to the cosmos · ॐ नमो भगवते वासुदेवाय</div>
+</footer>
+
+<script>
+function switchLayer(n) {
+  const l1 = document.getElementById('layer1TabBar');
+  const l2 = document.getElementById('layer2TabBar');
+  const l1Panels = document.querySelectorAll('.layer1-content.tab-panel');
+  const l2Panels = document.querySelectorAll('.layer2-content.tab-panel, #t2-1, #t2-2, #t2-3, #t2-4, #t2-5, #t2-6, #t2-7, #t2-8, #t2-9, #t2-10, #t2-11, #t2-12, #t2-13, #t2-14, #t2-15, #t2-16, #t2-17, #t2-18');
+  const allBtns = document.querySelectorAll('.layer-btn');
+
+  allBtns.forEach(b => b.classList.remove('active'));
+  allBtns[n-1].classList.add('active');
+
+  if (n === 1) {
+    l1.style.display = 'block';
+    l2.style.display = 'none';
+    document.querySelectorAll('[id^="t2-"]').forEach(p => { p.style.display='none'; p.classList.remove('active'); });
+    document.getElementById('t1-1').style.display = 'block';
+    document.getElementById('t1-1').classList.add('active');
+  } else {
+    l1.style.display = 'none';
+    l2.style.display = 'block';
+    document.querySelectorAll('[id^="t1-"]').forEach(p => { p.style.display='none'; p.classList.remove('active'); });
+    document.querySelectorAll('[id^="t2-"]').forEach(p => { p.style.display='none'; p.classList.remove('active'); });
+    document.getElementById('t2-1').style.display = 'block';
+    document.getElementById('t2-1').classList.add('active');
+    document.querySelectorAll('#layer2TabBar .tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('#layer2TabBar .tab-btn').classList.add('active');
+  }
+}
+
+function switchTab(btn, id) {
+  document.querySelectorAll('#layer2TabBar .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('[id^="t2-"]').forEach(p => { p.style.display='none'; p.classList.remove('active'); });
+  const panel = document.getElementById(id);
+  panel.style.display = 'block';
+  panel.classList.add('active');
+  panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+  document.querySelector('.content-area').scrollTo(0,0);
+  window.scrollTo({top: document.querySelector('.tab-bar-wrapper').offsetTop - 60, behavior:'smooth'});
+}
+
+function switchTab1(btn, id) {
+  document.querySelectorAll('#layer1TabBar .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('[id^="t1-"]').forEach(p => { p.style.display='none'; p.classList.remove('active'); });
+  const panel = document.getElementById(id);
+  if (panel) { panel.style.display='block'; panel.classList.add('active'); }
+}
+
+// Init: hide all L1 panels, show L2 tab 1
+document.querySelectorAll('[id^="t1-"]').forEach(p => p.style.display='none');
+document.getElementById('layer1TabBar').style.display = 'none';
+document.getElementById('t2-1').style.display = 'block';
+</script>
+</body>
+</html>
